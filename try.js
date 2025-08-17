@@ -1,10 +1,11 @@
-function sumTo(n) {
+export function sumTo(n) {
   let s = 0;
-  for (let i = 1; i < n; i++) {
-    s += i;
+  for (let i = 0; i <= n; i++) {
+    //added 'n -' to s to sum to n
+    s += n - i;
   }
   return s;
 }
 
-let sum = sumTo(3);
+let sum = sumTo("4");
 console.log(sum);
