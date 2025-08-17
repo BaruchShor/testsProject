@@ -14,5 +14,22 @@ export function maxOrNull(arr) {
   return arr.length ? max : null;
 }
 
-let sum = maxOrNull([-4, -2]);
-console.log(sum);
+export function findObjectByValue(objArr, value) {
+  //added a variable to get the resault
+  let res = "";
+  objArr.forEach((obj) => {
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        const element = obj[key];
+        if (element === value) {
+          res = obj;
+          break;
+        }
+      }
+    }
+  });
+  return res || "not found";
+}
+
+let res = findObjectByValue([{ name: "sss" }, { name: "bob" }], "alice");
+console.log(res);
