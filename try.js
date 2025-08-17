@@ -7,5 +7,12 @@ export function sumTo(n) {
   return s;
 }
 
-let sum = sumTo("4");
+export function maxOrNull(arr) {
+  //changed the first index of max
+  let max = arr[0];
+  for (const x of arr) if (x > max) max = x;
+  return arr.length ? max : null;
+}
+
+let sum = maxOrNull([-4, -2]);
 console.log(sum);
